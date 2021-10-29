@@ -1,14 +1,13 @@
 version: '3.8'
 
 services:
-  ts-node-docker:
+  simulator:
     build:
       context: .
       dockerfile: Dockerfile
-      target: base
     volumes:
       - ./src:/home/node/app/src
-    container_name: ts-node-docker
+    container_name: simulator
     expose:
       - ${PORT}
     ports:
