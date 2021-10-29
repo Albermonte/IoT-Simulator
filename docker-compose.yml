@@ -11,7 +11,7 @@ services:
       - mongodb_network
     container_name: simulator
     expose:
-      - ${PORT}
+      - 7777
     ports:
-      - ${PORT}:${PORT}
+      - 7777:7777
     command: npm run start

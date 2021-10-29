@@ -12,4 +12,4 @@ ADD . /home/node/app
 RUN npm run build
 
 CMD [ "npm", "start" ]
-EXPOSE ${PORT}
+EXPOSE 7777

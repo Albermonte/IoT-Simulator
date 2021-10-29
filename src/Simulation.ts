@@ -10,7 +10,7 @@ export default class Simulation {
     this.charge = 100;
     this.temp = 30;
 
-    const port = Number(process.env.PORT || 7777);
+    const port = 7777;
     this.websocketClient = uWS.App().ws('/*', {
       compression: 0,
       maxPayloadLength: 16 * 1024 * 1024,
