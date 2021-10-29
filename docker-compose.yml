@@ -8,10 +8,14 @@ services:
     volumes:
       - ./src:/home/node/app/src
     networks:
-      - mongodb_network
+      - simulator_network
     container_name: simulator
     expose:
       - 7777
     ports:
       - 7777:7777
     command: npm run start
+
+networks:
+  simulator_network:
+      name: simulator_network
