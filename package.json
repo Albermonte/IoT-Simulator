@@ -11,9 +11,9 @@
   },
   "engineStrict": true,
   "scripts": {
-    "start": "tsc && pm2 start ecosystem.config.js",
-    "dev": "ts-node-dev --trace-warnings --respawn --rs ./src/main.ts",
-    "tsc": "tsc"
+    "dev": "ts-node-dev --respawn --rs ./src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^14.14.31",
