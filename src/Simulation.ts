@@ -50,7 +50,8 @@ export default class Simulation {
     const data = {
       tension,
       temp: this.temp,
-      charge: this.charge
+      charge: this.charge,
+      timestamp: new Date()
     };
 
     const dataToDB = new Battery(data);

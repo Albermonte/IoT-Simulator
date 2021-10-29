@@ -4,6 +4,7 @@ export interface IBattery {
   tension: number;
   temp: number;
   charge: number;
+  timestamp: Date;
 }
 
 export interface IBatteryModel extends IBattery, mongoose.Document { }
@@ -13,6 +14,7 @@ const batterySchema = new mongoose.Schema(
     tension: { type: Number, required: true },
     temp: { type: Number, required: true },
     charge: { type: Number, required: true },
+    timestamp: { type: Date, required: true },
   },
   {
     versionKey: false,
