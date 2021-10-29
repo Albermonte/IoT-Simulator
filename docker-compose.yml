@@ -1,15 +1,16 @@
-version: "3.8"
-networks:
-  api_server_default:
-    external: true
+version: '3.8'
+
 services:
-  hackernewsapp:
-    networks:
-      - api_server_default
+  ts-node-docker:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
-      ENV_NAME: dev
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+    container_name: ts-node-docker
+    expose:
+      - ${PORT}
     ports:
-      - 7001:7001
+      - ${PORT}:${PORT}
+    command: npm run start
