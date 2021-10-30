@@ -15,5 +15,6 @@ services:
     command: npm run start
 
 networks:
-  simulator_network:
-      name: simulator_network
+  public:
+    external:
+      name: public
