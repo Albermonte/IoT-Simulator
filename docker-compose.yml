@@ -4,7 +4,7 @@ services:
   simulator:
     container_name: simulator
     networks:
-      - simulator_network
+      - public
     build:
       context: .
       dockerfile: Dockerfile
