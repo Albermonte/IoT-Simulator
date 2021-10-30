@@ -4,7 +4,7 @@ services:
   simulator:
     container_name: simulator
     networks:
-      - public
+      - simulator_network
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,6 +15,5 @@ services:
     command: npm run start
 
 networks:
-  public:
-    external:
-      name: public
+  simulator_network:
+      name: simulator_network
