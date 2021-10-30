@@ -2,16 +2,14 @@ version: '3.8'
 
 services:
   simulator:
+    container_name: simulator
+    networks:
+      - simulator_network
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./src:/home/node/app/src
-    networks:
-      - simulator_network
-    container_name: simulator
-    expose:
-      - 7777
     ports:
       - 7777:7777
     command: npm run start
