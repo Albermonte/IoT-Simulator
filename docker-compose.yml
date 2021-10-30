@@ -4,7 +4,6 @@ services:
   simulator:
     container_name: simulator
     networks:
-      - simulator_network
       - overlay_network
     build:
       context: .
@@ -16,8 +15,6 @@ services:
     command: npm run start
 
 networks:
-  simulator_network:
-      name: simulator_network
   overlay_network:
       external: true
       name: overlay_network
