@@ -5,6 +5,7 @@ services:
     container_name: simulator
     networks:
       - simulator_network
+      - overlay_network
     build:
       context: .
       dockerfile: Dockerfile
@@ -17,3 +18,6 @@ services:
 networks:
   simulator_network:
       name: simulator_network
+  overlay_network:
+      external: true
+      name: overlay_network
