@@ -4,7 +4,8 @@ services:
   simulator:
     container_name: simulator
     networks:
-      - overlay_network
+      - bridge_network
+      - simulator_network
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,6 +16,7 @@ services:
     command: npm run start
 
 networks:
-  overlay_network:
-      external: true
-      name: overlay_network
+  bridge_network:
+      name: bridge_network
+  simulator_network:
+      name: simulator_network
